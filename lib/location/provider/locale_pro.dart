@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider_study/manager/storage_manager.dart';
+import 'package:provider_study/main_manager/storage_manager.dart';
 
 class LocalePro extends ChangeNotifier {
   // sharedPreferences 的 語言 Key 值

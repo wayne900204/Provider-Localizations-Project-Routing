@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_study/location/provider/locale_pro.dart';
 
-import '../app_localizations.dart';
-import '../locale_pro.dart';
-import '../manager/route_manager.dart';
+import '../location/app_localizations.dart';
+import '../main_manager/route_manager.dart';
 
-class SecondPage extends StatelessWidget {
+class UserSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.pink,
       body: Center(
         child: Column(
           children: [

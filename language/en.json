@@ -1,4 +1,7 @@
 {
   "name": "My name is Wenyeh",
-  "introduce": "Hello"
+  "introduce": "Hello",
+  "bar_home": "Home",
+  "bar_project": "Project",
+  "bar_setting" : "Setting"
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_study/manager/route_manager.dart';
-import 'package:provider_study/manager/storage_manager.dart';
+import 'package:provider_study/main_manager/route_manager.dart';
+import 'package:provider_study/main_manager/storage_manager.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'app_localizations.dart';
-import 'locale_pro.dart';
+import 'bottom_bar/bar_pro.dart';
+import 'location/app_localizations.dart';
+import 'location/provider/locale_pro.dart';
 
 void main() async {
   Provider.debugCheckInvalidValueType = null;
@@ -28,14 +29,15 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider<LocalePro>(
           create: (context) => new LocalePro(),
         ),
+        ChangeNotifierProvider(create: (context) => BottomBarPro()),
       ],
-      child: Consumer<LocalePro>(builder: (context, localeModel, child) {
+      child: Consumer<LocalePro>(builder: (context, localePro, child) {
         return RefreshConfiguration(
             hideFooterWhenNotFull: true, //列表數據不满一頁,不觸發加載更多
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(primarySwatch: Colors.cyan),
-              locale: localeModel.locale,
+              locale: localePro.locale,
               localizationsDelegates: const [
                 AppLocalizations.delegate,
                 RefreshLocalizations.delegate, //下拉刷新

@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_study/location/provider/locale_pro.dart';
 
-import '../app_localizations.dart';
-import '../locale_pro.dart';
-import '../manager/route_manager.dart';
+import '../location/app_localizations.dart';
+import '../main_manager/route_manager.dart';
 
-class FirstPage extends StatelessWidget {
+class ProjectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.blue,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(AppLocalizations.of(context).translate('name')),
             Text(AppLocalizations.of(context).translate('name')),
@@ -20,16 +19,11 @@ class FirstPage extends StatelessWidget {
             MaterialButton(
               onPressed: () {
                 var model = Provider.of<LocalePro>(context, listen: false);
-                model.switchLocale(1);
-              },
-              child: Text("改成中文"),
-            ),
-            MaterialButton(
-              onPressed: () {
-                var model = Provider.of<LocalePro>(context, listen: false);
+                Navigator.of(context)
+                    .pushReplacementNamed(RouteName.homeSecondFloor);
                 model.switchLocale(0);
               },
-              child: Text("改成英文"),
+              child: Text(AppLocalizations.of(context).translate('name')),
             ),
           ],
         ),

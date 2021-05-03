@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:provider_study/pages/first_pages.dart';
-import 'package:provider_study/pages/second_pages.dart';
-import 'package:provider_study/pages/third_pages.dart';
-import 'package:provider_study/route_animation.dart';
+import 'package:provider_study/bottom_bar/bottom_bar.dart';
+import 'package:provider_study/home/home_page.dart';
+import 'package:provider_study/project/project_page.dart';
+import 'package:provider_study/main_manager/splash.dart';
+import 'package:provider_study/main_manager/route_animation.dart';
 
 class RouteName {
   static const String splash = 'splash';
@@ -15,11 +16,11 @@ class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteName.splash:
-        return NoAnimRouteBuilder(FirstPage());
+        return NoAnimRouteBuilder(SplashPage());
       case RouteName.tab:
-        return NoAnimRouteBuilder(SecondPage());
+        return NoAnimRouteBuilder(BottomRoutePage());
       case RouteName.homeSecondFloor:
-        return SlideTopRouteBuilder(ThirdPage());
+        return SlideTopRouteBuilder(HomePage());
       default:
         return CupertinoPageRoute(
             builder: (_) => Scaffold(

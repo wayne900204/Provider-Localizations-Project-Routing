@@ -1,4 +1,7 @@
 {
   "name": "我的名字叫做 Wenyeh",
-  "introduce" : "你好呀"
+  "introduce" : "你好呀",
+  "bar_home": "首頁",
+  "bar_project": "項目",
+  "bar_setting" : "設定"
 }

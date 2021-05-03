@@ -11,3 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The Provider of Localizations
 - The Big Project structure of Routing and Routing Animation
 - The app localizations function
+
+## [0.0.2] -2021-05-03
+### Added 
+- Custom Animation Bottom Bar using Provider
